@@ -1,6 +1,7 @@
 "use client";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import Image from "next/image";
 // import Image from "next/image";
 
 const ProductDetailsCarousal = ({ images }: any) => {
@@ -17,6 +18,7 @@ const ProductDetailsCarousal = ({ images }: any) => {
       >
         {images?.map((img: any, index: any) => (
           <img
+            // fill
             key={index}
             src={process.env.NEXT_PUBLIC_API_URL + "images/" + img}
             alt={index}

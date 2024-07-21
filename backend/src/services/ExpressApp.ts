@@ -2,20 +2,19 @@ import express, { Application } from "express";
 import path from "path";
 import morgan from "morgan";
 import cors from "cors";
-import helmet from "helmet";
+// import helmet from "helmet";
 import { authRoute, productRoute } from "../routes";
 import { errorController } from "../controllers/errorController";
 import { CustomError } from "../utility/CustomeError";
 
 export default async (app: Application) => {
-  app.use(
-    helmet({
-      strictTransportSecurity: {
-        maxAge: 123456,
-      },
-      xFrameOptions: { action: "deny" },
-    })
-  );
+  // app.use(
+  //   helmet({
+  //     strictTransportSecurity: {
+  //       maxAge: 123456,
+  //     },
+  //   })
+  // );
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(
